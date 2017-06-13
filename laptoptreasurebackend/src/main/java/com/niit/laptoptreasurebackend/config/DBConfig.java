@@ -46,7 +46,7 @@ public class DBConfig
 		   return sessionBuilder.buildSessionFactory();
 	   }
        
-	   @Bean(name="txManager")
+	   @Bean(name="transManager")
 	   public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory)
 	   {
 
