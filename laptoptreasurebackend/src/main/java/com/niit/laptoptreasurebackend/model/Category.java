@@ -1,6 +1,7 @@
 package com.niit.laptoptreasurebackend.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -8,6 +9,12 @@ import javax.persistence.Table;
 @Table
 public class Category
 {
+	@Id
+	@GeneratedValue
+    int catid;
+	
+    String catname,catdesc;
+    
 	public int getCatid() {
 		return catid;
 	}
@@ -26,8 +33,6 @@ public class Category
 	public void setCatdesc(String catdesc) {
 		this.catdesc = catdesc;
 	}
-	@Id
-	int catid;
-	String catname,catdesc;
+	
 
 }

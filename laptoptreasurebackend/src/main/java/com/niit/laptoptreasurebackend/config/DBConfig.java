@@ -29,7 +29,7 @@ public class DBConfig
            System.out.println("----Data Source Creation-----");
 		   DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		   dataSource.setDriverClassName("org.h2.Driver");
-		   dataSource.setUrl("jdbc:h2:~/database");
+		   dataSource.setUrl("jdbc:h2:tcp://localhost/~/database");
 		   dataSource.setUsername("sa");
 		   dataSource.setPassword("anuash02");
 		   System.out.println("----Data Source Creation-----");
@@ -43,7 +43,7 @@ public class DBConfig
 		   Properties properties=new Properties();
 		   properties.setProperty("hibernate.hbm2ddl.auto", "update");
 		   properties.put("hibernate.show_sql", "true");
-		   properties.put("hibernate.dialect", "org.hibernate.dialect.h2dialect");
+		   properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
 		   System.out.println("------Hibernate properties created------");
 		   
 		   System.out.println("------LacalSessionFactoryBuider object creation------");
@@ -55,9 +55,11 @@ public class DBConfig
 		   System.out.println("------Session Factory  object creation------");
 		   SessionFactory sessionFactory=sessionBuilder.buildSessionFactory();
 		   System.out.println("------Session factory object created------");
-		   //return sessionFactory;
-		   return sessionBuilder.buildSessionFactory();
+		   return sessionFactory;
+		   //return sessionBuilder.buildSessionFactory();
 	   }
+	   
+	   
        @Autowired
 	   @Bean(name="txManager")
 	   public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory)
@@ -66,6 +68,8 @@ public class DBConfig
 		   HibernateTransactionManager transactionManager=new HibernateTransactionManager(sessionFactory);
 				   return transactionManager;
 	   }
+       
+       
 	   @Autowired
 	   @Bean(name="categoryDAO")
 	   public CategoryDAO getCategoryDAO(SessionFactory sessionFactory)
