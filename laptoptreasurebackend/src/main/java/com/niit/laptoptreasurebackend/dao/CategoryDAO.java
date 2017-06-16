@@ -7,7 +7,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.niit.laptoptreasurebackend.model.Category;
+import com.niit.laptoptreasurebackend.model.*;
 
 
 @Repository("categoryDAO")
@@ -27,12 +27,12 @@ public class CategoryDAO
 		Session session=sessionFactory.getCurrentSession();
 		session.saveOrUpdate(category);
 	}
-   /* public Category getCategory(int catid)
+    public Category getCategory(int catid)
     {
 
     	Session session= sessionFactory.openSession();
     	Category category=(Category)session.get(Category.class,catid);
     	session.close();
     	return category;
-    }*/
+    }
 }

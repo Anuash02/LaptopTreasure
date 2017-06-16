@@ -4,6 +4,10 @@ import javax.persistence.Id;
 
 public class Supplier
 {
+	@Id
+	int supid;
+	String supname,address;
+	
 	public int getSupid() {
 		return supid;
 	}
@@ -22,8 +26,6 @@ public class Supplier
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	@Id
-	int supid;
-	String supname,address;
+	
 
 }

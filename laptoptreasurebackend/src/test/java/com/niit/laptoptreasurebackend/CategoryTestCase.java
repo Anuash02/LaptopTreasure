@@ -19,8 +19,8 @@ public class CategoryTestCase
 		
 		//Inserting Test Case
 		Category category=new Category();
-		category.setCatname("HP laptop");
-		category.setCatdesc("The laptop is enabled with HP");
+		category.setCatname("Lenovo laptop");
+		category.setCatdesc("The laptop is enabled with Lenovo");
 		
 		categoryDAO.insertUpdateCategory(category);
 		System.out.println("Category Inserted");

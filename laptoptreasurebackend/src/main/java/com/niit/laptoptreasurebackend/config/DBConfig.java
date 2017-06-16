@@ -15,6 +15,7 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.laptoptreasurebackend.dao.CategoryDAO;
+import com.niit.laptoptreasurebackend.dao.SupplierDAO;
 import com.niit.laptoptreasurebackend.model.Category;
 
 
@@ -77,5 +78,13 @@ public class DBConfig
 	   {
 		   System.out.println("-- CategoryDAO Object Creation--");
 		   return new CategoryDAO(sessionFactory);
+	   }
+	   
+	   @Bean(name="supplierDAO")
+	   public SupplierDAO getSupplierDAO(SessionFactory sessionFactory)
+	   {
+          System.out.println("-----Supplier DAO object Creation------");
+          return new SupplierDAO(sessionFactory);
+		   
 	   }
 }
