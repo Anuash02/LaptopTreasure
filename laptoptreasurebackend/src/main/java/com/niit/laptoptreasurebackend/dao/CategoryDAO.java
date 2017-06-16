@@ -1,15 +1,13 @@
 package com.niit.laptoptreasurebackend.dao;
 
 import javax.transaction.Transactional;
-import org.hibernate.Query;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-
-import com.niit.laptoptreasurebackend.model.*;
+import com.niit.laptoptreasurebackend.model.Category;
 
 
 @Repository("categoryDAO")

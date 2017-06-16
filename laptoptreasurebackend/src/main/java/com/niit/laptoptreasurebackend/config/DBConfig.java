@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.laptoptreasurebackend.dao.CategoryDAO;
 import com.niit.laptoptreasurebackend.model.Category;
@@ -20,9 +21,9 @@ import com.niit.laptoptreasurebackend.model.Category;
 
 @Configuration
 @ComponentScan("com.niit.laptoptreasurebackend")
-
+@EnableTransactionManagement
 public class DBConfig
-{      @Autowired
+{     
 	   @Bean(name="dataSource")
 	  public DataSource getH2DataSource()
 	  {
@@ -47,7 +48,7 @@ public class DBConfig
 		   System.out.println("------Hibernate properties created------");
 		   
 		   System.out.println("------LacalSessionFactoryBuider object creation------");
-		   LocalSessionFactoryBuilder sessionBuilder=new LocalSessionFactoryBuilder(dataSource);
+		   LocalSessionFactoryBuilder sessionBuilder=new LocalSessionFactoryBuilder(getH2DataSource());
 		   sessionBuilder.addProperties(properties);
 		   System.out.println("------Factory Builder object created------");
 		   sessionBuilder.addAnnotatedClass(Category.class);
@@ -61,7 +62,7 @@ public class DBConfig
 	   
 	   
        @Autowired
-	   @Bean(name="txManager")
+	   @Bean(name="transactionManager")
 	   public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory)
 	   {
 
@@ -69,12 +70,12 @@ public class DBConfig
 				   return transactionManager;
 	   }
        
-       
+      
 	   @Autowired
 	   @Bean(name="categoryDAO")
 	   public CategoryDAO getCategoryDAO(SessionFactory sessionFactory)
 	   {
-
+		   System.out.println("-- CategoryDAO Object Creation--");
 		   return new CategoryDAO(sessionFactory);
 	   }
 }
