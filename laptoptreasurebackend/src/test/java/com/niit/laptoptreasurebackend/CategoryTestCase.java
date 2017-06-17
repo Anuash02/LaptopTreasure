@@ -1,4 +1,6 @@
 package com.niit.laptoptreasurebackend;
+import java.util.List;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.niit.laptoptreasurebackend.dao.CategoryDAO;
@@ -19,12 +21,35 @@ public class CategoryTestCase
 		
 		//Inserting Test Case
 		Category category=new Category();
-		category.setCatname("Lenovo laptop");
-		category.setCatdesc("The laptop is enabled with Lenovo");
+		category.setCatname("Dell laptop");
+		category.setCatdesc("The laptop is enabled with Dell");
 		
 		categoryDAO.insertUpdateCategory(category);
 		System.out.println("Category Inserted");
 		
+		//Retrieval TestCase
+		
+				/*Category category=categoryDAO.getCategory(0);
+				System.out.println("Category Name:"+category.getCatname());
+				System.out.println("Category Description:"+category.getCatdesc());*/
+		
+		//Retrieving the Data
+		
+				/*List<Category> list=categoryDAO.getCategoryDetails();
+				
+				for(Category category:list)
+				{
+					System.out.println(category.getCatid()+":"+category.getCatname()+":"+category.getCatdesc());
+				}*/
+		
+		//Update the Category
+				/*Category category=categoryDAO.getCategory(3);
+				category.setCatname("WifiEnMobile");
+				categoryDAO.insertUpdateCategory(category);
+				System.out.println("The Category Updated");*/
+				
+		
+				
 		
 	}
 

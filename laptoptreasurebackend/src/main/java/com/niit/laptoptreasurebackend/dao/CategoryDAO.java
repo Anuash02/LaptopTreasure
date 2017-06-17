@@ -1,7 +1,10 @@
 package com.niit.laptoptreasurebackend.dao;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +24,7 @@ public class CategoryDAO
        this.sessionFactory=sessionFactory;
 	}
 	
-    @Transactional
+    @org.springframework.transaction.annotation.Transactional
 	public void insertUpdateCategory(Category category)
 	{
 		Session session=sessionFactory.getCurrentSession();
@@ -35,4 +38,20 @@ public class CategoryDAO
     	session.close();
     	return category;
     }
+    
+    @org.springframework.transaction.annotation.Transactional
+	public void deleteCategory(Category category)
+	{
+		sessionFactory.getCurrentSession().delete(category);
+	}
+	
+	public List<Category> getCategoryDetails()
+	{
+		Session session=sessionFactory.openSession();
+		Query query=session.createQuery("from Category");
+		List<Category> list=query.list();
+		session.close();
+		return list;
+	}
+	
 }
