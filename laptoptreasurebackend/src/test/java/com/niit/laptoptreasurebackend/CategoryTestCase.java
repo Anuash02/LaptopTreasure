@@ -20,16 +20,16 @@ public class CategoryTestCase
 		CategoryDAO categoryDAO=(CategoryDAO)context.getBean("categoryDAO");
 		
 		//Inserting Test Case
-		Category category=new Category();
+		/*Category category=new Category();
 		category.setCatname("Dell laptop");
 		category.setCatdesc("The laptop is enabled with Dell");
 		
 		categoryDAO.insertUpdateCategory(category);
-		System.out.println("Category Inserted");
+		System.out.println("Category Inserted");*/
 		
 		//Retrieval TestCase
 		
-				/*Category category=categoryDAO.getCategory(0);
+				/*Category category=categoryDAO.getCategory(2);
 				System.out.println("Category Name:"+category.getCatname());
 				System.out.println("Category Description:"+category.getCatdesc());*/
 		
@@ -43,10 +43,10 @@ public class CategoryTestCase
 				}*/
 		
 		//Update the Category
-				/*Category category=categoryDAO.getCategory(3);
-				category.setCatname("WifiEnMobile");
+				Category category=categoryDAO.getCategory(3);
+				category.setCatname("Dell with 4GB RAM ");
 				categoryDAO.insertUpdateCategory(category);
-				System.out.println("The Category Updated");*/
+				System.out.println("The Category Updated");
 				
 		
 				
