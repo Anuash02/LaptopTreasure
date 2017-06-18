@@ -21,8 +21,8 @@ public class CategoryTestCase
 		
 		//Inserting Test Case
 		/*Category category=new Category();
-		category.setCatname("Dell laptop");
-		category.setCatdesc("The laptop is enabled with Dell");
+		category.setCatname("Business Laptop");
+		category.setCatdesc("This laptop is enabled with 8GB RAM with i7 Processor");
 		
 		categoryDAO.insertUpdateCategory(category);
 		System.out.println("Category Inserted");*/
@@ -33,20 +33,25 @@ public class CategoryTestCase
 				System.out.println("Category Name:"+category.getCatname());
 				System.out.println("Category Description:"+category.getCatdesc());*/
 		
+		//Deletion TestCase
+				/*Category category=categoryDAO.getCategory(2);
+				categoryDAO.deleteCategory(category);
+				System.out.println("The Category Deleted");*/
+		
 		//Retrieving the Data
 		
-				/*List<Category> list=categoryDAO.getCategoryDetails();
+			  List<Category> list=categoryDAO.getCategoryDetails();
 				
 				for(Category category:list)
 				{
 					System.out.println(category.getCatid()+":"+category.getCatname()+":"+category.getCatdesc());
-				}*/
+				}
 		
 		//Update the Category
-				Category category=categoryDAO.getCategory(3);
-				category.setCatname("Dell with 4GB RAM ");
+				/*Category category=categoryDAO.getCategory(3);
+				category.setCatname("Dell with 1TB HardDisc ");
 				categoryDAO.insertUpdateCategory(category);
-				System.out.println("The Category Updated");
+				System.out.println("The Category Updated");*/
 				
 		
 				

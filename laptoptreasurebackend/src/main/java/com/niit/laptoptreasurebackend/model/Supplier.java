@@ -1,11 +1,19 @@
 package com.niit.laptoptreasurebackend.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table
 public class Supplier
 {
 	@Id
+    @GeneratedValue
 	int supid;
+	
+	
 	String supname,address;
 	
 	public int getSupid() {

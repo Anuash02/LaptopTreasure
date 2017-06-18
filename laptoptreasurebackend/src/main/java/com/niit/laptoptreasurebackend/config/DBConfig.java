@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.niit.laptoptreasurebackend.dao.CategoryDAO;
 import com.niit.laptoptreasurebackend.dao.SupplierDAO;
 import com.niit.laptoptreasurebackend.model.Category;
+import com.niit.laptoptreasurebackend.model.Supplier;
 
 
 
@@ -53,7 +54,7 @@ public class DBConfig
 		   sessionBuilder.addProperties(properties);
 		   System.out.println("------Factory Builder object created------");
 		   sessionBuilder.addAnnotatedClass(Category.class);
-		   
+		   sessionBuilder.addAnnotatedClass(Supplier.class);
 		   System.out.println("------Session Factory  object creation------");
 		   SessionFactory sessionFactory=sessionBuilder.buildSessionFactory();
 		   System.out.println("------Session factory object created------");
@@ -80,6 +81,7 @@ public class DBConfig
 		   return new CategoryDAO(sessionFactory);
 	   }
 	   
+	   @Autowired
 	   @Bean(name="supplierDAO")
 	   public SupplierDAO getSupplierDAO(SessionFactory sessionFactory)
 	   {

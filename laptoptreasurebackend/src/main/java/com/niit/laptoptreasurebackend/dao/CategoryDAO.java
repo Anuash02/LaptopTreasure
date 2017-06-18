@@ -10,7 +10,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.niit.laptoptreasurebackend.model.*;
+import com.niit.laptoptreasurebackend.model.Category;
 
 
 @Repository("categoryDAO")
@@ -24,7 +24,7 @@ public class CategoryDAO
        this.sessionFactory=sessionFactory;
 	}
 	
-    @org.springframework.transaction.annotation.Transactional
+    @Transactional
 	public void insertUpdateCategory(Category category)
 	{
 		Session session=sessionFactory.getCurrentSession();
@@ -39,7 +39,7 @@ public class CategoryDAO
     	return category;
     }
     
-    @org.springframework.transaction.annotation.Transactional
+    @Transactional
 	public void deleteCategory(Category category)
 	{
 		sessionFactory.getCurrentSession().delete(category);
