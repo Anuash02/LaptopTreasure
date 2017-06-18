@@ -15,7 +15,8 @@ import com.niit.laptoptreasurebackend.model.Supplier;
 
 @Repository("supplierDAO")
 public class SupplierDAO
-{   @Autowired
+{  
+	@Autowired
 	SessionFactory sessionFactory;
 
 		public SupplierDAO (SessionFactory sessionFactory)
