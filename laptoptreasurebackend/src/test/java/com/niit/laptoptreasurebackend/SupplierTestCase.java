@@ -20,12 +20,12 @@ public class SupplierTestCase
 		 SupplierDAO supplierDAO=(SupplierDAO)context.getBean("supplierDAO");
 		 
 		 //Inserting Supplier test cases
-		/*Supplier supplier=new Supplier();
+		Supplier supplier=new Supplier();
 		 supplier.setSupname("DELL");
 		 supplier.setAddress("Pune");
 		 
 		 supplierDAO.insertUpdateSupplier(supplier);
-		 System.out.println("Supplier Created");*/
+		 System.out.println("Supplier Created");
 		 
 		 
 		//Retrieval TestCase
@@ -41,12 +41,12 @@ public class SupplierTestCase
 			
 			//Retrieving the Data
 			
-			List<Supplier> list=supplierDAO.getSupplierDetails();
+			/*List<Supplier> list=supplierDAO.getSupplierDetails();
 			
 			for(Supplier supplier:list)
 			{
 				System.out.println(supplier.getSupid()+":"+supplier.getSupname()+":"+supplier.getAddress());
-			}
+			}*/
 	
 	//Update the Supplier
 			/*Supplier supplier=supplierDAO.getSupplier(3);

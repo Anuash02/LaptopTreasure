@@ -24,7 +24,7 @@ public class ProductDAO
 	}
 	
 	@Transactional
-	public void inserUpdateProduct(Product product)
+	public void insertUpdateProduct(Product product)
 	{
 
 		Session session=sessionFactory.getCurrentSession();
@@ -52,7 +52,7 @@ public class ProductDAO
 	{
 
 		Session session=sessionFactory.openSession();
-	Query query=session.createQuery("from Product");
+	    Query query=session.createQuery("from Product");
 		List<Product> list=query.list();
 		session.close();
 		return list;

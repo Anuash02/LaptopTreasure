@@ -20,12 +20,12 @@ public class CategoryTestCase
 		CategoryDAO categoryDAO=(CategoryDAO)context.getBean("categoryDAO");
 		
 		//Inserting Test Case
-		/*Category category=new Category();
-		category.setCatname("Business Laptop");
-		category.setCatdesc("This laptop is enabled with 8GB RAM with i7 Processor");
+		Category category=new Category();
+		category.setCatname("Notebook Laptop");
+		category.setCatdesc("This laptop is enabled with 8GB RAM with i5 Processor");
 		
 		categoryDAO.insertUpdateCategory(category);
-		System.out.println("Category Inserted");*/
+		System.out.println("Category Inserted");
 		
 		//Retrieval TestCase
 		
@@ -40,12 +40,12 @@ public class CategoryTestCase
 		
 		//Retrieving the Data
 		
-			  List<Category> list=categoryDAO.getCategoryDetails();
+			 /* List<Category> list=categoryDAO.getCategoryDetails();
 				
 				for(Category category:list)
 				{
 					System.out.println(category.getCatid()+":"+category.getCatname()+":"+category.getCatdesc());
-				}
+				}*/
 		
 		//Update the Category
 				/*Category category=categoryDAO.getCategory(3);

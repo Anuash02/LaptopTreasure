@@ -21,15 +21,16 @@ public class ProductTestCase
 		
 		
 		//Inserting Product Case
-		/*Product product=new Product();
-		product.setProdname("Lenovo IdeaPad");
-		product.setProddesc("Laptop meant for Supercharged audio experience the full-impact of surround sound anywhere");
-		product.setQuantity(4);
-		product.setPrice(45000);
-		product.setCatid(1);
-		product.setSupid(1);
-		productDAO.inserUpdateProduct(product);
-		System.out.println("Product Created");*/
+		Product product=new Product();
+		product.setProdname("DELL Inspiron");
+		product.setProddesc("Laptop meant for personal as well as professional users");
+		product.setQuantity(5);
+		product.setPrice(60000);
+		product.setCatid(3);
+		product.setSupid(3);
+		
+		productDAO.insertUpdateProduct(product);
+		System.out.println("Product Created");
 		
 		//Retrieval of Test Cases
 		
@@ -47,12 +48,19 @@ public class ProductTestCase
 		System.out.println("The Product Deleted");*/
 		
 		//Retrieval of Data
-		List<Product> list= productDAO.getProductDetails();
+		/*List<Product> list= productDAO.getProductDetails();
 		for(Product product:list)
 		{
 
 			System.out.println(product.getProdname()+":" +product.getProddesc()+":" +product.getQuantity()+":"+ product.getPrice()+":" +product.getCatid()+":" +product.getSupid());
-		}
+		}*/
+		
+		//Update the Category
+		/*Product product=productDAO.getProduct(2);
+		product.setProdname("Dell with 1TB HardDisc ");
+		productDAO.insertUpdateProduct(product);
+		System.out.println("The Product Updated");*/
+		
 		
 	}
 

@@ -19,6 +19,7 @@ import com.niit.laptoptreasurebackend.dao.SupplierDAO;
 import com.niit.laptoptreasurebackend.model.Category;
 import com.niit.laptoptreasurebackend.model.Product;
 import com.niit.laptoptreasurebackend.model.Supplier;
+import com.niit.laptoptreasurebackend.model.UserDetails;
 
 
 
@@ -59,6 +60,8 @@ public class DBConfig
 		   sessionBuilder.addAnnotatedClass(Supplier.class);
 		   
 		   sessionBuilder.addAnnotatedClass(Product.class);
+		   
+		   sessionBuilder.addAnnotatedClass(UserDetails.class);
 		   System.out.println("------Session Factory  object creation------");
 		   SessionFactory sessionFactory=sessionBuilder.buildSessionFactory();
 		   System.out.println("------Session factory object created------");
