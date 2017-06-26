@@ -28,7 +28,7 @@ public class UserDetailsDAO
 	{
 
 		Session session=sessionFactory.getCurrentSession();
-		session.saveOrUpdate(userDetails);
+		session.save(userDetails);
 	}
 	
 	public UserDetails getUserDetails(String username)

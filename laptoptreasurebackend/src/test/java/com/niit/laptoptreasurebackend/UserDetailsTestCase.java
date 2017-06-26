@@ -18,12 +18,13 @@ public class UserDetailsTestCase
 		 
 		//Inserting UserDetails test cases
 			UserDetails userDetails=new UserDetails();
+			//userDetails.setUsername("Shan12");
 			 userDetails.setPassword("anuash02");
-			 userDetails.setCustname("Shanaya");
+			 userDetails.setCustname("Shekhar");
 			 userDetails.setRole("Purchase");
-			 userDetails.setEmail("shanaya1@gmail.com");
-			 userDetails.setAddress("Pune");
-			 userDetails.setMobile("9422152767");
+			 userDetails.setEmail("shekhar123@gmail.com");
+			 userDetails.setAddress("Nagpur");
+			 userDetails.setMobile("9422152788");
 			 userDetailsDAO.insertUpdateUserDetails(userDetails);
 			 System.out.println("UserDetails Created");
 		 
