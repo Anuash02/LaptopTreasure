@@ -8,26 +8,25 @@
   <name>laptoptresurefrontend Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
+    
     <dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
-		</dependency>
-		
-<dependency>
- <groupId>com.niit</groupId>
+	</dependency>
+	
+	<dependency>
+	<groupId>com.niit</groupId>
   <artifactId>laptoptreasurebackend</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <type>jar</type>
- </dependency>
-  
-            <dependency>
+ 	</dependency>
+		
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>4.3.5.RELEASE</version>
-		</dependency>
-	
-            
+		</dependency> 
+    
   </dependencies>
   <build>
     <finalName>laptoptresurefrontend</finalName>
