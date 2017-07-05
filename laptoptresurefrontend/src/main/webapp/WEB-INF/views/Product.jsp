@@ -15,11 +15,7 @@
                           <td><form:input path="prodid" /></td>
                       </tr>
                       
-                      <tr>
-                           <td>Product Name</td>
-                           <td><form:input path="prodname" /></td>
-                           
-                      </tr>
+                      
               <tr>
                   <td>Category</td>
                   <td><form:select path="catid">
@@ -28,25 +24,35 @@
                   </form:select>
                   </td>                
              </tr>
-             <tr>
-                 <td>Supplier</td>
-                 <td><form:input path="supid" /></td>
-             </tr>
-             
-             <tr>
+              <tr>
                  <td>Price</td>
                  <td><form:input path="price" /></td>
-             </tr>
-             
-             <tr>
-                 <td>Quantity</td>
-                 <td><form:input path="quantity" /></td>
              </tr>
              
              <tr>
                  <td>Product Desc</td>
                  <td><form:textarea path="proddesc" /></td>
              </tr>
+             
+                     <tr>
+                           <td>Product Name</td>
+                           <td><form:input path="prodname" /></td>
+                           
+                      </tr>
+             
+            
+             
+             <tr>
+                 <td>Quantity</td>
+                 <td><form:input path="quantity" /></td>
+             </tr>
+             
+             
+             <tr>
+                 <td>Supplier</td>
+                 <td><form:input path="supid" /></td>
+             </tr>
+             
              
              <tr>
                   <td colspan="2"><input type="submit" /></td>
@@ -60,17 +66,16 @@
 
 	<tr bgcolor="pink">
 		<td>Product ID</td>
-		<td>Product Name</td>
-		<td>Product Desc</td>
-		<td>Price</td>
-		<td>Quantity</td>
 		<td>Category ID</td>
+		<td>Price</td>
+		<td>Product Desc</td>
+		<td>Product Name</td>
+		<td>Quantity</td>
 		<td>Supplier ID</td>
-		
-					
 		<td>Operation</td>
 	</tr>
-	<c:forEach items="${proddetail}" var="product">
+	      
+	<c:forEach items="${prodlist}" var="product">
 		<tr bgcolor="cyan">
 			<td>${product.prodid}</td>
 			<td>${product.prodname}</td>

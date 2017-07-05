@@ -6,7 +6,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -29,24 +31,35 @@ public class ProductController
 	{
 		List<Category> list=categoryDAO.getCategoryDetails();
 		LinkedHashMap<Integer,String> catlist=new LinkedHashMap<Integer,String>();
+		
 		for(Category cat:list)
 		{
-
 			catlist.put(cat.getCatid(), cat.getCatname());
 		}
+		
 		Product product=new Product();
 		m.addAttribute("catlist",catlist);
 		m.addAttribute("product",product);
-       return "Product";
-       
-		
+        return "Product";
 	}
 	
+	
 	@RequestMapping(value="/InsertProduct",method=RequestMethod.POST)
-	public String insertProduct(@ModelAttribute("product") Product product)
+	public String insertProduct(@ModelAttribute("product") Product product, BindingResult result, Model m)
 	{
+		System.out.println("---Product Inserted-----");
         productDAO.insertUpdateProduct(product);
+        List<Product> prodlist=productDAO.getProductDetails();
+        m.addAttribute("prodlist",prodlist);
 		return "Product";
 	}
+	
+	public String updateProduct(@PathVariable("prodid")int prodid,Model m)
+	{
 
+		Product product=productDAO.getProduct(prodid);
+		m.addAttribute("product",product);
+		return "Product";
+	}
+			
 }
