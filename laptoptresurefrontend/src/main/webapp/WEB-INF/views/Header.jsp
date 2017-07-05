@@ -20,6 +20,7 @@
 			<li><a href="Contactus">Contact us</a></li>
 			<li><a href="Category">Category</a></li>
 			<li><a href="Product">Product</a></li>
+			<li><a href="Supplier">Supplier</a></li>
 			
 			
 		</ul>

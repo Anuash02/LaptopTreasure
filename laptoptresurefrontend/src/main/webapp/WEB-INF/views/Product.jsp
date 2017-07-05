@@ -7,7 +7,7 @@
 <form:form action= "InsertProduct" modelAttribute="product">
 <table align="center">
                       <tr>
-                           <td colspan="2"><center>Product Details</center></td>
+                           <td colspan="1"><center>Product Details</center></td>
                      </tr>
                       
                       <tr>
@@ -51,6 +51,41 @@
              <tr>
                   <td colspan="2"><input type="submit" /></td>
              </tr>
-</table>
 
+</table>
 </form:form>
+
+<!-- Displaying the Product data using Table -->
+<table cellspacing="2" align="center" border="1">
+
+	<tr bgcolor="pink">
+		<td>Product ID</td>
+		<td>Product Name</td>
+		<td>Product Desc</td>
+		<td>Price</td>
+		<td>Quantity</td>
+		<td>Category ID</td>
+		<td>Supplier ID</td>
+		
+					
+		<td>Operation</td>
+	</tr>
+	<c:forEach items="${proddetail}" var="product">
+		<tr bgcolor="cyan">
+			<td>${product.prodid}</td>
+			<td>${product.prodname}</td>
+			<td>${product.proddesc}</td>
+			<td>${product.price}</td>
+			<td>${product.quantity}</td>
+			<td>${product.catid}</td>
+			<td>${product.supid}</td>
+			<td><a href="<c:url value="deleteProduct/${product.prodid}"/>">Delete</a>
+				<a href="<c:url value="updateProduct/${product.prodid}"/>">Update</a>
+			</td>
+		</tr>
+	</c:forEach>
+</table>
+<!-- Completed Displaying Table -->
+
+</body>
+</html>
