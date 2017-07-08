@@ -84,6 +84,7 @@
 			<td>${product.quantity}</td>
 			<td>${product.catid}</td>
 			<td>${product.supid}</td>
+			
 			<td><a href="<c:url value="deleteProduct/${product.prodid}"/>">Delete</a>
 				<a href="<c:url value="updateProduct/${product.prodid}"/>">Update</a>
 			</td>

@@ -3,11 +3,12 @@
 <%@ page language="java" contentType="text/html"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+
 <%@include file="Header.jsp"%>
 
 <!-- Category Form Started -->
 <c:if test="${flag}">
-	<form action="UpdateCategory" method="post">
+	<form action="/laptoptresurefrontend/UpdateCategory" method="post">
 </c:if>
 <c:if test="${!flag}">
 <form action="AddCategory" method="post">
@@ -59,8 +60,8 @@
 			<td>${category.catid}</td>
 			<td>${category.catname}</td>
 			<td>${category.catdesc}</td>
-			<td><a href="<c:url value="deleteCategory/${category.catid}"/>">Delete</a>
-				<a href="<c:url value="updateCategory/${category.catid}"/>">Update</a>
+			  <td><a href="<c:url value="deleteCategory/${category.catid}"/>">Delete</a>
+				    <a href="<c:url value="updateCategory/${category.catid}"/>">Update</a>
 			</td>
 		</tr>
 	</c:forEach>

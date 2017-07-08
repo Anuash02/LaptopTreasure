@@ -71,12 +71,11 @@ public class CategoryController
 	}
 	
 	@RequestMapping(value="/updateCategory/{catid}")
-	public String insertUpdateCategory(@PathVariable("catid") int catid,Model m)
+	public String getUpdateCategory(@PathVariable("catid") int catid,Model m)
 	{
 		System.out.println("--- Getting Category Object to be Updated ---");
 		
 		Category category=categoryDAO.getCategory(catid);
-		//categoryDAO.insertUpdateCategory(category);
 		m.addAttribute("category",category);
 		
 		List<Category> list=categoryDAO.getCategoryDetails();
@@ -87,8 +86,9 @@ public class CategoryController
 		
 		return "Category";
 	}
+	
 	@RequestMapping(value="/UpdateCategory",method=RequestMethod.POST)
-	public String insertUpdateCategory(@RequestParam("catid") int catid,@RequestParam("catname") String catname,@RequestParam("catdesc") String catdesc,Model m)
+	public String updateCategory(@RequestParam("catid") int catid,@RequestParam("catname") String catname,@RequestParam("catdesc") String catdesc,Model m)
 	{
 		System.out.println("--Updating the Category----");
 
@@ -107,5 +107,5 @@ public class CategoryController
 		
 		return "Category";
 	}
-
+	
 }
